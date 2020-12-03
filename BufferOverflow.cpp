@@ -33,24 +33,24 @@ void demoBufferOverflowData() {
 	// Get user name
 	memset(userName, 1, USER_INPUT_MAX_LENGTH);
 	memset(passwd, 2, USER_INPUT_MAX_LENGTH);
-	printf_s("login as: ");
+	printf_s(stdout, "login as: ");
 	fflush(stdout);
 	//gets(userName); // use scanf("%s", userName); if gets fails with identifier not found
 	scanf_s("%s", userName);
 
 	// Get password
-	printf_s("%s@vulnerable.machine.com: ", userName);
+	printf_s(stdout, "%s@vulnerable.machine.com: ", userName);
 	fflush(stdout);
 	//gets(passwd);  
 	scanf_s("%s", passwd); // use scanf("%s", passwd); if gets fails with identifier not found
 
 	// Check user rights (set to NORMAL_USER and not changed in code)
 	if (userRights == NORMAL_USER) {
-		printf_s("\nWelcome, normal user '%s', your rights are limited.\n\n", userName);
+		printf_s(stdout, "\nWelcome, normal user '%s', your rights are limited.\n\n", userName);
 		fflush(stdout);
 	}
 	if (userRights == ADMIN_USER) {
-		printf_s("\nWelcome, all mighty admin user '%s'!\n", userName);
+		printf_s(stdout, "\nWelcome, all mighty admin user '%s'!\n", userName);
 		fflush(stdout);
 	}
 
