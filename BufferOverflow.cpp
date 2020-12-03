@@ -123,6 +123,7 @@ void demoDataTypeOverflow(int totalItemsCount, some_structure* pItem, int itemPo
 
 
 int main() {
+	g++ ./fail.cpp
 	printf_s("%-20s: %p\n", "main", main);
 	printf_s("\n");
 
